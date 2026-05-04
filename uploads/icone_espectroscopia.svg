@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Ícone de espectroscopia</title>
+  <desc id="desc">Lâmpada de gás emitindo luz que passa por uma rede de difração e gera linhas espectrais coloridas.</desc>
+  <rect width="512" height="512" fill="#F5F3EF"></rect>
+  <g fill="none" stroke="#1F3D34" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M123 130v-36"></path>
+    <path d="M123 418v-36"></path>
+    <rect x="91" y="130" width="64" height="252" rx="32"></rect>
+    <path d="M106 130v-23h34v23"></path>
+    <path d="M106 382v23h34v-23"></path>
+    <path d="M155 256h73"></path>
+    <path d="M252 145v222"></path>
+    <path d="M252 145h24"></path>
+    <path d="M252 190h18"></path>
+    <path d="M252 235h24"></path>
+    <path d="M252 280h18"></path>
+    <path d="M252 325h24"></path>
+  </g>
+  <g fill="none" stroke="#8A987F" stroke-width="11" stroke-linecap="round">
+    <path d="M123 222v-15"></path>
+    <path d="M123 305v-15"></path>
+    <path d="M92 256h15"></path>
+    <path d="M139 256h15"></path>
+    <path d="M101 234l10 10"></path>
+    <path d="M145 234l-10 10"></path>
+    <path d="M101 278l10-10"></path>
+    <path d="M145 278l-10-10"></path>
+  </g>
+  <circle cx="123" cy="256" r="8" fill="#8A987F"></circle>
+  <g fill="none" stroke-width="12" stroke-linecap="round">
+    <path d="M276 196l91-54" stroke="#5C5DAE"></path>
+    <path d="M276 226l91-29" stroke="#2E8AB8"></path>
+    <path d="M276 256h91" stroke="#4F9B6F"></path>
+    <path d="M276 286l91 29" stroke="#D9B83F"></path>
+    <path d="M276 316l91 54" stroke="#C75D4D"></path>
+  </g>
+  <g fill="none" stroke-width="12" stroke-linecap="round">
+    <path d="M396 142h43" stroke="#5C5DAE"></path>
+    <path d="M396 197h43" stroke="#2E8AB8"></path>
+    <path d="M396 256h43" stroke="#4F9B6F"></path>
+    <path d="M396 315h43" stroke="#D9B83F"></path>
+    <path d="M396 370h43" stroke="#C75D4D"></path>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Ícone de viscosidade</title>
+  
+
+  
+  <ellipse cx="256" cy="116" rx="60" ry="16" fill="none" stroke="white" stroke-width="9"></ellipse>
+
+  
+  <path d="M196 116v278c0 10 27 18 60 18s60-8 60-18V116" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  
+  <circle cx="256" cy="264" r="32" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="8"></circle>
+
+  
+  <path d="M256 310v52" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M256 362l-16-20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M256 362l16-20" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="7" stroke-linecap="round"></path>
+
+  
+  <path d="M190 230c-14 16 14 28 0 46" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="6" stroke-linecap="round"></path>
+  <path d="M322 230c14 16-14 28 0 46" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="6" stroke-linecap="round"></path>
+</svg>

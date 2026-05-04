@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Ícone de pêndulo de torção</title>
+  <desc id="desc">Disco suspenso por fio vertical, com setas de rotação e ângulo theta.</desc>
+  <rect width="512" height="512" fill="#F5F3EF"></rect>
+  <g fill="none" stroke="#1F3D34" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M202 96h108"></path>
+    <path d="M256 96v240"></path>
+    <ellipse cx="256" cy="348" rx="104" ry="28"></ellipse>
+    <path d="M152 348v42c0 18 47 32 104 32s104-14 104-32v-42"></path>
+    <path d="M152 390c0 18 47 32 104 32s104-14 104-32"></path>
+  </g>
+  <g fill="none" stroke="#8A987F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M208 252c28-25 69-25 96 0"></path>
+    <path d="M208 252l32-4"></path>
+    <path d="M208 252l15-28"></path>
+    <path d="M304 252l-32-4"></path>
+    <path d="M304 252l-15-28"></path>
+    <path d="M256 348l-55 38"></path>
+    <path d="M256 348l56 38"></path>
+    <path d="M256 348v62"></path>
+  </g>
+  <g stroke="#8A987F" stroke-width="9" stroke-linecap="round" stroke-dasharray="1 18">
+    <path d="M256 348l-55 38"></path>
+    <path d="M256 348l56 38"></path>
+    <path d="M256 348v62"></path>
+  </g>
+  <text x="285" y="390" font-family="Georgia, serif" font-size="42" fill="#1F3D34">θ</text>
+</svg>

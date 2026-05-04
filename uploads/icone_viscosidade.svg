@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Ícone de viscosidade</title>
+  <desc id="desc">Tubo com esfera em queda, seta para baixo e linhas onduladas indicando resistência do fluido.</desc>
+  <rect width="512" height="512" fill="#F5F3EF"></rect>
+  <g fill="none" stroke="#1F3D34" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="256" cy="110" rx="62" ry="17"></ellipse>
+    <path d="M194 110v292c0 10 28 18 62 18s62-8 62-18V110"></path>
+    <path d="M234 296v55"></path>
+    <path d="M234 351l-18-21"></path>
+    <path d="M234 351l18-21"></path>
+    <path d="M205 160h24"></path>
+    <path d="M205 205h24"></path>
+  </g>
+  <circle cx="256" cy="260" r="29" fill="#8A987F" stroke="#1F3D34" stroke-width="12"></circle>
+  <g fill="none" stroke="#8A987F" stroke-width="12" stroke-linecap="round">
+    <path d="M193 238c-16 18 16 30 0 50c-16 18 16 30 0 50"></path>
+    <path d="M319 238c16 18-16 30 0 50c16 18-16 30 0 50"></path>
+  </g>
+</svg>

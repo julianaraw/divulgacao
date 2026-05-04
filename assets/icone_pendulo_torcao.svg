@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Ícone de pêndulo de torção</title>
+  
+
+  
+  <path d="M196 100h120" fill="none" stroke="white" stroke-width="10" stroke-linecap="round"></path>
+
+  
+  <path d="M256 100v230" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"></path>
+
+  
+  <ellipse cx="256" cy="348" rx="100" ry="26" fill="none" stroke="white" stroke-width="9" stroke-linecap="round"></ellipse>
+
+  
+  <path d="M156 348v36c0 16 45 28 100 28s100-12 100-28v-36" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  
+  <path d="M210 258c26-22 66-22 92 0" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="7" stroke-linecap="round"></path>
+  
+  <path d="M210 258l18-3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M210 258l10-16" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="7" stroke-linecap="round"></path>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Ícone de espectroscopia</title>
+  
+
+  
+  <rect x="96" y="140" width="58" height="232" rx="29" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></rect>
+
+  
+  <path d="M154 256h82" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="7" stroke-linecap="round"></path>
+
+  
+  <path d="M246 148v216" fill="none" stroke="white" stroke-width="9" stroke-linecap="round"></path>
+  <path d="M246 148h20" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M246 196h14" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M246 244h20" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M246 292h14" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+  <path d="M246 340h20" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+
+  
+  <path d="M270 200l100-52" stroke="rgba(180,180,255,0.85)" stroke-width="8" stroke-linecap="round" fill="none"></path>
+  <path d="M270 228l100-26" stroke="rgba(150,210,255,0.85)" stroke-width="8" stroke-linecap="round" fill="none"></path>
+  <path d="M270 256h100" stroke="rgba(150,230,180,0.85)" stroke-width="8" stroke-linecap="round" fill="none"></path>
+  <path d="M270 284l100 26" stroke="rgba(255,220,120,0.85)" stroke-width="8" stroke-linecap="round" fill="none"></path>
+  <path d="M270 312l100 52" stroke="rgba(230,130,110,0.85)" stroke-width="8" stroke-linecap="round" fill="none"></path>
+</svg>

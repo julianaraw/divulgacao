@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divulgação Científica — Juliana Raw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f7f3ee;
+    --cream-dark: #ede7de;
+    --green-dark: #2d4a3e;
+    --green-mid: #4a6d5e;
+    --sage: #8a9e7e;
+    --terra: #c4705a;
+    --terra-light: #d9896f;
+    --text: #2a2725;
+    --text-mid: #5a534d;
+    --text-light: #9a9088;
+    --white: #fdfaf7;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .nav-logo img { height: 60px; width: auto; }
+  .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--text); font-size: 13.5px;
+    font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--terra); }
+  .nav-icons { display: flex; gap: 10px; align-items: center; }
+  .nav-icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--green-dark); color: var(--white);
+    text-decoration: none; font-size: 14px; transition: background 0.2s;
+  }
+  .nav-icon:hover { background: var(--terra); }
+  .nav-icon.mail { background: var(--terra); }
+  .nav-icon.mail:hover { background: var(--green-dark); }
+  .icon-svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--green-dark);
+    padding: 64px 80px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 60px solid rgba(255,255,255,0.04);
+  }
+  .page-header-inner { max-width: 700px; position: relative; z-index: 1; }
+  .page-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--terra-light);
+    margin-bottom: 12px;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 700; color: var(--white);
+    line-height: 1.2; margin-bottom: 16px;
+  }
+  .page-header p {
+    color: rgba(255,255,255,0.72);
+    font-size: 15.5px; line-height: 1.7; max-width: 540px;
+  }
+
+  /* LAYOUT */
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 80px;
+    align-items: start;
+  }
+
+  /* POSTS */
+  .posts-list { display: flex; flex-direction: column; gap: 0; }
+
+  /* FEATURED POST */
+  .post-featured {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    transition: box-shadow 0.2s;
+  }
+  .post-featured:hover { box-shadow: 0 12px 40px rgba(45,74,62,0.1); }
+
+  .post-featured-image {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+  }
+  .post-featured-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+  .post-featured:hover .post-featured-image img { transform: scale(1.02); }
+
+  .post-featured-badge {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: var(--terra);
+    color: var(--white);
+    font-size: 10.5px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 20px;
+  }
+
+  .post-featured-body { padding: 36px 40px 40px; }
+
+  .post-meta {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 14px;
+  }
+  .post-category {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--terra);
+  }
+  .post-date { font-size: 12.5px; color: var(--text-light); }
+  .post-read-time { font-size: 12.5px; color: var(--text-light); }
+  .post-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-light); }
+
+  .post-featured-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--green-dark); margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .post-featured-body .post-excerpt {
+    font-size: 15px; color: var(--text-mid);
+    line-height: 1.75; margin-bottom: 28px;
+  }
+
+  .post-read-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--terra); text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .post-read-link:hover { gap: 12px; }
+
+  /* ARTICLE CONTENT (inline expanded) */
+  .post-content {
+    display: none;
+    padding: 0 40px 40px;
+    border-top: 1px solid var(--cream-dark);
+    margin-top: 8px;
+  }
+  .post-content.open { display: block; }
+
+  .post-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; color: var(--green-dark);
+    margin: 28px 0 12px;
+  }
+  .post-content p {
+    font-size: 15px; color: var(--text-mid);
+    line-height: 1.8; margin-bottom: 16px;
+  }
+  .post-content .pullquote {
+    border-left: 3px solid var(--terra);
+    padding: 14px 24px;
+    margin: 28px 0;
+    background: var(--cream);
+    border-radius: 0 8px 8px 0;
+  }
+  .post-content .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-style: italic;
+    color: var(--green-dark); margin: 0;
+  }
+  .post-content .concept-box {
+    background: var(--cream-dark);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .post-content .concept-box strong {
+    display: block; font-size: 12px;
+    font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--terra);
+    margin-bottom: 6px;
+  }
+  .post-content .concept-box p { margin: 0; font-size: 14px; }
+  .post-content .ref {
+    font-size: 12.5px; color: var(--text-light);
+    border-top: 1px solid var(--cream-dark);
+    padding-top: 16px; margin-top: 24px;
+  }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 90px; }
+
+  .sidebar-section { margin-bottom: 36px; }
+  .sidebar-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; color: var(--green-dark);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--cream-dark);
+  }
+
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    background: var(--cream-dark);
+    color: var(--text-mid);
+    font-size: 12px; font-weight: 500;
+    padding: 5px 12px; border-radius: 20px;
+    cursor: pointer; transition: background 0.2s, color 0.2s;
+    border: none;
+  }
+  .tag:hover { background: var(--green-dark); color: var(--white); }
+
+  .sidebar-post {
+    display: flex; gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .sidebar-post:last-child { border-bottom: none; }
+  .sidebar-post-thumb {
+    width: 56px; height: 44px;
+    border-radius: 6px; flex-shrink: 0;
+    overflow: hidden;
+  }
+  .sidebar-post-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sidebar-post-title {
+    font-size: 13px; font-weight: 500;
+    color: var(--text); line-height: 1.4;
+    transition: color 0.2s;
+  }
+  .sidebar-post:hover .sidebar-post-title { color: var(--terra); }
+  .sidebar-post-cat {
+    font-size: 11px; color: var(--text-light);
+    margin-top: 3px;
+  }
+
+  .about-sidebar {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+  }
+  .about-sidebar-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--sage);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .about-sidebar h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px; color: var(--green-dark); margin-bottom: 6px;
+  }
+  .about-sidebar p {
+    font-size: 12.5px; color: var(--text-mid); line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Juliana Raw logo" style="border-radius: 10px">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#sobre">Sobre mim</a></li>
+    <li><a href="index.html#trabalhos">Trabalhos</a></li>
+    <li><a href="index.html#experimentos">Experimentos</a></li>
+    <li><a href="divulgacao.html" class="active">Divulgação</a></li>
+    <li><a href="index.html#contato">Contato</a></li>
+  </ul>
+  <div class="nav-icons">
+    <a href="https://github.com/julianaraw" target="_blank" class="nav-icon" title="GitHub">
+      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/juliana-raw/" target="_blank" class="nav-icon" title="LinkedIn">
+      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="http://lattes.cnpq.br/1890853506354588" target="_blank" class="nav-icon" title="Lattes" style="background: #2d3270;">
+      <img src="assets/lattes_icon.svg" alt="Lattes" style="width: 18px; height: 18px;">
+    </a>
+    <a href="/cdn-cgi/l/email-protection#bcd6c9d0d5ddd2dd92ceddcbfcc9cfcc92dece" class="nav-icon mail" title="Email">
+      <svg class="icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-tag">Divulgação Científica</div>
+    <h1>Ciência que faz sentido</h1>
+    <p>Textos sobre física, biofísica e a beleza dos fenômenos que governam a vida — escritos para quem quer entender, não apenas saber.</p>
+  </div>
+</div>
+
+<!-- BLOG LAYOUT -->
+<div class="blog-layout">
+
+  <!-- POSTS -->
+  <main class="posts-list">
+
+    <!-- FEATURED POST -->
+    <article class="post-featured">
+      <div class="post-featured-image">
+        <img src="assets/triptofano.png" alt="Fluorescência do triptofano em proteínas">
+        <span class="post-featured-badge">Destaque</span>
+      </div>
+      <div class="post-featured-body">
+        <div class="post-meta">
+          <span class="post-category">Biofísica Molecular</span>
+          <span class="post-dot"></span>
+          <span class="post-date">30 de abril de 2026</span>
+          <span class="post-dot"></span>
+          <span class="post-read-time">8 min de leitura</span>
+        </div>
+        <h2>O que a cor da luz nos conta sobre as proteínas</h2>
+        <p class="post-excerpt">
+          Existe um aminoácido dentro das proteínas capaz de emitir luz — e a cor dessa luz carrega informações precisas sobre o ambiente molecular ao seu redor. O triptofano é um desses raros "espiões" que a natureza colocou dentro das proteínas, e aprender a ouvi-lo é uma das ferramentas mais poderosas da biofísica moderna.
+        </p>
+        <a href="#" class="post-read-link" onclick="toggleArticle(event)">Ler artigo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+      </div>
+
+      <!-- FULL ARTICLE CONTENT -->
+      <div class="post-content" id="article-1">
+
+        <h3>Um aminoácido que brilha</h3>
+        <p>
+          Entre os vinte aminoácidos que compõem as proteínas, o triptofano ocupa um lugar especial: ele absorve luz ultravioleta e re-emite essa energia como fluorescência. Mas o mais fascinante não é o fato de ele brilhar — é que a <em>cor</em> da luz emitida muda dependendo de onde o triptofano está na proteína.
+        </p>
+        <p>
+          Proteínas totalmente dobradas, com o triptofano escondido em seu interior hidrofóbico, emitem luz em comprimentos de onda mais curtos — mais "azuis". Já quando a proteína está exposta ao solvente aquoso, ou parcialmente desnaturada, a emissão desloca para comprimentos de onda maiores — mais "vermelhos". Essa variação pode ser de quase 50 nanômetros, o suficiente para ser medida com precisão em laboratório.
+        </p>
+
+        <div class="pullquote">
+          <p>"A cor da fluorescência do triptofano é um termômetro molecular — ela registra o ambiente elétrico ao redor do aminoácido com uma sensibilidade extraordinária."</p>
+        </div>
+
+        <h3>O efeito Stark interno</h3>
+        <p>
+          Por que a cor muda? A resposta está na física dos campos elétricos. Quando o triptofano absorve um fóton e passa para um estado excitado, a distribuição de elétrons em seu anel aromático se redistribui: a densidade eletrônica migra de uma parte do anel para outra. Essa redistribuição torna o aminoácido sensível ao campo elétrico criado pelos átomos vizinhos na proteína.
+        </p>
+        <p>
+          Esse fenômeno é chamado de <strong>efeito Stark interno</strong> — uma analogia ao efeito Stark clássico, em que campos elétricos externos deslocam os níveis de energia de átomos e moléculas. No caso do triptofano, o "campo externo" é gerado pelos próprios resíduos carregados, dipolos e moléculas de água ao redor da proteína.
+        </p>
+
+        <div class="concept-box">
+          <strong>Conceito-chave</strong>
+          <p>Resíduos positivamente carregados próximos ao anel benzênico do triptofano deslocam a emissão para comprimentos de onda maiores (desvio para o vermelho). Cargas negativas próximas ao anel pirrol causam o efeito oposto. Essa assimetria é o que torna o triptofano um sensor tão preciso do ambiente proteico.</p>
+        </div>
+
+        <h3>Simulações que preveem a cor</h3>
+        <p>
+          Um trabalho de referência de Vivian e Callis (2001) mostrou que é possível <em>prever</em> o comprimento de onda de fluorescência de diferentes triptofanos em 16 proteínas distintas, partindo apenas da estrutura cristalográfica e de simulações de dinâmica molecular quântico-clássica. Com apenas um parâmetro ajustável, o modelo reproduziu os valores experimentais com desvio médio de apenas 6 nanômetros — uma precisão notável para um sistema tão complexo.
+        </p>
+        <p>
+          O que isso significa na prática? Que ao medir o espectro de fluorescência de uma proteína em laboratório, podemos inferir quais resíduos estão próximos ao triptofano, se a região está hidratada, e se a proteína mudou de conformação ao se ligar a um substrato ou sofrer uma mutação.
+        </p>
+
+        <h3>Por que isso importa para a biofísica</h3>
+        <p>
+          O triptofano como sonda fluorescente é uma ferramenta amplamente utilizada para estudar dobramento e desdobramento de proteínas, interações proteína-ligante, acessibilidade de regiões ao solvente e dinâmica estrutural em tempo real. Em muitos casos, é possível inserir um único triptofano em uma posição estratégica por meio de mutagênese sítio-dirigida, criando uma "câmera" molecular no interior exato da proteína.
+        </p>
+        <p>
+          Compreender os mecanismos por trás dos deslocamentos espectrais transforma essa sonda de um fenômeno empírico em uma ferramenta quantitativa — capaz de revelar não apenas "algo mudou", mas exatamente o que mudou e onde.
+        </p>
+
+        <p class="ref">
+          Referência científica: Vivian, J.T. &amp; Callis, P.R. (2001). Mechanisms of tryptophan fluorescence shifts in proteins. <em>Biophysical Journal</em>, 80(5), 2093–2109.
+        </p>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="about-sidebar">
+        <div class="about-sidebar-avatar">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+        <h4>Juliana Raw</h4>
+        <p>Física e pós-doutoranda em biofísica. Escrevo sobre a ciência dos sistemas vivos com rigor e acessibilidade.</p>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Temas</h3>
+      <div class="tag-cloud">
+        <button class="tag">Biofísica</button>
+        <button class="tag">Fluorescência</button>
+        <button class="tag">Proteínas</button>
+        <button class="tag">Óptica</button>
+        <button class="tag">SAXS</button>
+        <button class="tag">Dinâmica Molecular</button>
+        <button class="tag">Física Quântica</button>
+        <button class="tag">Fluidos</button>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Também no blog</h3>
+      <a href="#" class="sidebar-post">
+        <div class="sidebar-post-thumb" style="background: var(--sage);"></div>
+        <div>
+          <div class="sidebar-post-title">O que o espalhamento de raios X revela sobre biomoléculas</div>
+          <div class="sidebar-post-cat">SAXS · Estrutura</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-post">
+        <div class="sidebar-post-thumb" style="background: var(--green-dark);"></div>
+        <div>
+          <div class="sidebar-post-title">Movimento Browniano: a dança invisível das partículas</div>
+          <div class="sidebar-post-cat">Física Estatística</div>
+        </div>
+      </a>
+      <a href="#" class="sidebar-post">
+        <div class="sidebar-post-thumb" style="background: var(--terra);"></div>
+        <div>
+          <div class="sidebar-post-title">Viscosidade: quando o fluido resiste ao movimento</div>
+          <div class="sidebar-post-cat">Mecânica dos Fluidos</div>
+        </div>
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer style="background: var(--green-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 28px 48px; font-size: 13px;">
+  &copy; 2026 <span style="color: var(--terra);">Juliana Raw</span> &mdash; Física &amp; Biofísica &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#ea809f86838b848bc4988b9daa9f999ac48898" style="color:var(--terra-light,#d9896f);text-decoration:none;"><span class="__cf_email__" data-cfemail="7f150a13161e111e510d1e083f0a0c0f511d0d">[email&#160;protected]</span></a> &nbsp;&middot;&nbsp; <a href="https://github.com/julianaraw" target="_blank" style="color:var(--terra-light,#d9896f);text-decoration:none;">GitHub</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/juliana-raw/" target="_blank" style="color:var(--terra-light,#d9896f);text-decoration:none;">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="http://lattes.cnpq.br/1890853506354588" target="_blank" style="color:var(--terra-light,#d9896f);text-decoration:none;">Lattes</a>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function toggleArticle(e) {
+    e.preventDefault();
+    const content = document.getElementById('article-1');
+    const link = e.currentTarget;
+    if (content.classList.contains('open')) {
+      content.classList.remove('open');
+      link.innerHTML = 'Ler artigo <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>';
+    } else {
+      content.classList.add('open');
+      link.innerHTML = 'Fechar artigo <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20l1.41-1.41L7.83 13H20v-2H7.83l5.58-5.59L12 4l-8 8z"/></svg>';
+    }
+  }
+</script>
+
+</body>
+</html>
